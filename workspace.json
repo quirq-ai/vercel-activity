@@ -1,0 +1,12 @@
+{
+  "$comment": "GitHub repos deployed from this workspace. A Vercel project appears on the dashboard only if it is linked to one of these repos. Add a repo here when the workspace starts deploying it.",
+  "repos": [
+    "quirq-ai/quirqy",
+    "quirq-ai/xo",
+    "quirq-ai/space-hub",
+    "quirq-ai/qq",
+    "sharmasuraj0123/xo-coworker",
+    "quirq-ai/vercel-activity",
+    "quirq-ai/github-activity"
+  ]
+}

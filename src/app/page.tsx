@@ -109,23 +109,15 @@ export default async function Home() {
   const data = await getActivity();
 
   return (
-    <main className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-5 py-10">
-      <header className="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="flex items-center gap-2 text-2xl font-semibold">
-            <svg viewBox="0 0 76 65" className="size-5 fill-current" aria-hidden>
-              <path d="M37.5 0 75 65H0z" />
-            </svg>
-            Vercel activity
-          </h1>
-          <p className="mt-1 text-sm text-secondary">
-            What&apos;s shipping across our Vercel projects.
-          </p>
-        </div>
+    <>
+      <div className="flex flex-wrap items-end justify-between gap-4">
+        <p className="text-sm text-secondary">
+          What&apos;s shipping across the Vercel projects deployed from our workspace.
+        </p>
         <p className="text-xs text-muted">
           Updated <TimeAgo ts={data.generatedAt} /> · refreshes every 5 min
         </p>
-      </header>
+      </div>
 
       {!data.ok ? (
         <div className="rounded-lg border border-grid bg-card p-6 text-sm text-secondary">
@@ -134,12 +126,7 @@ export default async function Home() {
       ) : (
         <Dashboard data={data} />
       )}
-
-      <footer className="mt-4 text-xs text-muted">
-        Showing projects deployed in the last {data.ok ? data.windowDays : 30} days. Preview
-        URLs, private repos and account details are never shown.
-      </footer>
-    </main>
+    </>
   );
 }
 
@@ -156,7 +143,7 @@ function Dashboard({ data }: { data: Extract<Awaited<ReturnType<typeof getActivi
   return (
     <>
       <section className="grid grid-cols-2 gap-3 md:grid-cols-4">
-        <Stat label="Active projects" value={String(data.projects.length)} />
+        <Stat label="Projects" value={String(data.projects.length)} />
         <Stat label="Deploys, last 7 days" value={String(week)} hint={`${total} in ${data.windowDays} days`} />
         <Stat
           label="Success rate"
