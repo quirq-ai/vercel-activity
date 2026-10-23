@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+/* Dark-only dashboard. Status steps follow the dataviz reference palette. */
+@theme inline {
+  --color-surface: #0b0b0b;
+  --color-raised: #1a1a19;
+  --color-card: #121211;
+  --color-grid: #2a2a28;
+  --color-axis: #3a3a37;
+  --color-primary: #f0efec;
+  --color-secondary: #c3c2b7;
+  --color-muted: #8a8980;
+  --color-good: #0ca30c;
+  --color-critical: #d03b3b;
+  --color-warning: #fab219;
+  --color-neutral: #5c5b56;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
